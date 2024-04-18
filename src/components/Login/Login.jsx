@@ -1,14 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../shared/Navbar/Navbar';
-import { GoogleAuthProvider, getAuth } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import app from '../../firebase/firebase.config';
 
 const Login = () => {
+    const [user, setUser] = useState(null);
     const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+
 
     const handleGoogleSignIn = () => {
-        console.log('Google Mama Is comming');
+        signInWithPopup(auth, googleProvider)
+        .then(result =>{
+            const loggedInUser = result.user;
+            console.log(loggedInUser);
+            setUser(loggedInUser);
+        })
+        .catch(error =>{
+            console.log( "Error", error.message);
+        })
+    }
+
+    const handleGitHubSignIn = () =>{
+        signInWithPopup(auth, githubProvider)
+       .then(result =>{
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+        setUser(loggedInUser);
+        })
+       .catch(error =>{
+            console.log( "Error", error.message);
+        })
+    }
+
+
+    const handleGoogleSignOut = () =>{
+        signOut(auth, googleProvider)
+        .then(result =>{
+            console.log(result);
+            setUser(null);
+        })
+        .catch(error =>{
+            console.log( "Error", error.message);
+        })
     }
 
     console.log(app);
@@ -35,11 +70,27 @@ const Login = () => {
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Login</button>
                     </div>
-                    <button onClick={handleGoogleSignIn} className='btn btn-accent'>Google Login</button>
+
+                    {
+                        user? (
+                            <button onClick={handleGoogleSignOut} className='btn btn-accent'>Logout</button>
+                        ) : (
+                            <div>
+                                <button onClick={handleGoogleSignIn} className='btn btn-accent'>Google Login</button>
+                                <button onClick={handleGitHubSignIn} className='btn btn-accent'>GitHub Login</button>
+                            </div>
+                        )
+                    }
                 </form>
-                
             </div>
             
+            {
+                user && <div className='text-center'>
+                    <h3>User : {user.displayName}</h3>
+                    <p>Email : {user.email} </p>
+                    <img src={user.photoURL} alt="" />
+                </div>
+            }
 
         </>
 
