@@ -9,7 +9,7 @@
         "area": "4000 sq ft",
         "location": "Coastal Town, California",
         "facilities": ["Swimming Pool", "Garden", "Home Theater"],
-        "image": "villa_image.jpg",
+        "image": "https://i.ibb.co/kJsjyrM/img-1.jpg",
         "other_information": {
           "bedrooms": 4,
           "bathrooms": 5,
@@ -26,7 +26,7 @@
         "area": "1200 sq ft",
         "location": "Downtown, New York",
         "facilities": ["Gym", "Concierge Service", "Balcony"],
-        "image": "apartment_image.jpg"
+        "image": "https://i.ibb.co/jygBgQK/img-2.jpg"
       },
       {
         "id": 3,
@@ -38,7 +38,7 @@
         "area": "2500 sq ft",
         "location": "Suburban Neighborhood, London",
         "facilities": ["Fireplace", "Garage", "Terrace"],
-        "image": "townhouse_image.jpg",
+        "image": "https://i.ibb.co/7gybT2C/img-4.jpg",
         "other_information": {
           "bedrooms": 3,
           "bathrooms": 2.5,
@@ -55,7 +55,7 @@
         "area": "3000 sq ft",
         "location": "Suburb, Sydney",
         "facilities": ["Swimming Pool", "Media Room", "Outdoor BBQ Area"],
-        "image": "family_home_image.jpg",
+        "image": "https://i.ibb.co/r72MtjB/properties-1.jpg",
         "other_information": {
           "bedrooms": 5,
           "bathrooms": 3,
@@ -72,7 +72,7 @@
         "area": "1800 sq ft",
         "location": "Riverside Village, France",
         "facilities": ["Deck", "Fire Pit", "Boat Dock"],
-        "image": "cottage_image.jpg"
+        "image": "https://i.ibb.co/n3zMrYK/properties-2.jpg"
       },
       {
         "id": 6,
@@ -84,7 +84,7 @@
         "area": "800 sq ft",
         "location": "Woodland Retreat, Canada",
         "facilities": ["Wood-burning Stove", "Hiking Trails", "Deck"],
-        "image": "cabin_image.jpg"
+        "image": "https://i.ibb.co/5BPXfCH/properties-3.jpg"
       },
       {
         "id": 7,
@@ -96,7 +96,7 @@
         "area": "2200 sq ft",
         "location": "Beachfront Paradise, Hawaii",
         "facilities": ["Ocean View", "Sun Deck", "Outdoor Shower"],
-        "image": "bungalow_image.jpg"
+        "image": "https://i.ibb.co/yPyQkmP/properties-4.jpg"
       },
       {
         "id": 8,
@@ -108,7 +108,7 @@
         "area": "3500 sq ft",
         "location": "Alpine Haven, Switzerland",
         "facilities": ["Ski Room", "Sauna", "Mountain View Terrace"],
-        "image": "mountain_retreat_image.jpg"
+        "image": "https://i.ibb.co/Zm7x98Y/properties-5.jpg"
       },
       {
         "id": 9,
@@ -120,7 +120,7 @@
         "area": "2000 sq ft",
         "location": "Metropolitan City, Japan",
         "facilities": ["Open Floor Plan", "City View", "Roof Deck"],
-        "image": "urban_loft_image.jpg"
+        "image": "https://i.ibb.co/fGscnwM/properties-6.jpg"
     }
 ]
 

@@ -7,6 +7,10 @@ import {
 } from "react-router-dom";
 import Home from './components/shared/Home/Home';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import Update from './components/Update/Update';
+import About from './components/About/About';
+import Blog from './components/Blog/Blog';
 
 const router = createBrowserRouter([
   {
@@ -15,8 +19,24 @@ const router = createBrowserRouter([
     loader: () => fetch('/residential.json')
   },
   {
+    path: '/about',
+    element: <About></About>
+  },
+  {
+    path: '/blog',
+    element: <Blog></Blog>
+  },
+  {
     path: "/login",
     element: <Login></Login>,
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
+  },
+  {
+    path: '/update',
+    element: <Update></Update>
   }
 ]);
 
