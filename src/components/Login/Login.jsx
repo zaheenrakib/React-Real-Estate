@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../shared/Navbar/Navbar';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import app from '../../firebase/firebase.config';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Login = () => {
@@ -12,13 +12,6 @@ const Login = () => {
     const githubProvider = new GithubAuthProvider();
     const navigate = useNavigate();
 
-
-    auth.onAuthStateChanged((user)=> {
-        if(user){
-            setUser(user);
-        }
-    })
-    // console.log(user);
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, googleProvider)
@@ -33,7 +26,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                // navigate('/');
+                navigate('/');
             })
             .catch(error => {
                 console.log("Error", error.message);
@@ -58,7 +51,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
-                // navigate('/');
+                navigate('/');
             })
             .catch(error => {
                 console.log("Error", error.message);
@@ -71,23 +64,20 @@ const Login = () => {
     }
 
 
-    const handleGoogleSignOut = () => {
-        signOut(auth, googleProvider)
-            .then(result => {
-                console.log(result);
-                setUser(null);
-            })
-            .catch(error => {
-                console.log("Error", error.message);
-            })
-    }
+    // const handleGoogleSignOut = () => {
+    //     signOut(auth, googleProvider)
+    //         .then(result => {
+    //             console.log(result);
+    //             setUser(null);
+    //         })
+    //         .catch(error => {
+    //             console.log("Error", error.message);
+    //         })
+    // }
+    // console.log(user)
     return (
         <>
-            <Navbar
-            
-            user={user}
-            
-            ></Navbar>
+            <Navbar></Navbar>
 
 
 
@@ -111,22 +101,19 @@ const Login = () => {
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Login</button>
                     </div>
+                    <div>
+                        <h1 className='text-center'>Don`t Have Account <Link to="/register" className='font-bold'> Sign In</Link> </h1>
+                    </div>
+                    <div className=' flex gap-5'>
+                        <button onClick={handleGoogleSignIn} className='btn btn-accent'>Google Login</button>
+                        <button onClick={handleGitHubSignIn} className='btn btn-accent'>GitHub Login</button>
+                    </div>
 
-                    {
-                        user ? (
-                            <button onClick={handleGoogleSignOut} className='btn btn-accent'>Logout</button>
-                        ) : (
-                            <div>
-                                <button onClick={handleGoogleSignIn} className='btn btn-accent'>Google Login</button>
-                                <button onClick={handleGitHubSignIn} className='btn btn-accent'>GitHub Login</button>
-                            </div>
-                        )
-                    }
                 </form>
             </div>
 
             {
-            
+
                 user && <div className='text-center'>
                     <h3>User : {user.displayName}</h3>
                     <p>Email : {user.email} </p>

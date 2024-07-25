@@ -6,9 +6,7 @@ import { useLoaderData } from 'react-router-dom';
 import ResiCard from './ResiCard';
 
 const Home = () => {
-
     const resi = useLoaderData();
-
 
     return (
         <div>

@@ -1,20 +1,41 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '/user.png'
 
-const Navbar = ({ user }) => {
-    if(!user){
-        // return <span className="loading loading-ring loading-lg"></span>
+import React, { useContext, } from 'react';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../Hooks/AuthProvider';
+import { getAuth, GoogleAuthProvider, signOut } from 'firebase/auth';
+import app from '../../../firebase/firebase.config';
+
+const Navbar = () => {
+    const currentUser = useContext(UserContext);
+    // console.log(currentUser);
+
+    const auth = getAuth(app);
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGoogleSignOut = () => {
+        signOut(auth, googleProvider)
+            .then(result => {
+                console.log(result);
+            })
+            .catch(error => {
+                console.log("Error", error.message);
+            })
     }
-    // const { displayName ,photoURL } = user;
-    // console.log(user)
+
     const navLinks = <>
         <Link to='/'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Home</li></Link>
         <Link to='/about'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>About</li></Link>
         <Link to='/blog'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Blog</li></Link>
         <Link to='/update'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Update Profile</li></Link>
-        <Link to='/login'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Login</li></Link>
-        <Link to='/register'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Register</li></Link>
+        {
+            currentUser ? (
+                <Link onClick={handleGoogleSignOut} to='/'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>LogOut</li></Link>
+            ) : (
+                <Link to='/login'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Login</li></Link>
+            )
+
+        }
+        {/* <Link to='/register'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Register</li></Link> */}
     </>
 
 
@@ -36,12 +57,21 @@ const Navbar = ({ user }) => {
                     {navLinks}
                 </ul>
             </div>
-            <div className="navbar-end">
-                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                        {/* <img title={displayName} src={photoURL} /> */}
-                    </div>
-                </div>
+            <div className='navbar-end'>
+                {
+                    currentUser ? (
+
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img title={currentUser?.displayName} src={currentUser?.photoURL} />
+                            </div>
+                        </div>
+                    ) : (
+                        <div>
+
+                        </div>
+                    )
+                }
             </div>
         </div>
     );
