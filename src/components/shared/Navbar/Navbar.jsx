@@ -4,22 +4,46 @@ import { Link } from 'react-router-dom';
 import { UserContext } from '../../Hooks/AuthProvider';
 import { getAuth, GoogleAuthProvider, signOut } from 'firebase/auth';
 import app from '../../../firebase/firebase.config';
+import Swal from 'sweetalert2';
+import { HashLoader } from 'react-spinners';
 
 const Navbar = () => {
-    const currentUser = useContext(UserContext);
-    // console.log(currentUser);
+    const { currentUser, loading } = useContext(UserContext);
+    if(loading){
+        return <HashLoader className='container mx-auto'></HashLoader>
+    }
+    console.log(currentUser)
+    console.log(loading)
 
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
 
     const handleGoogleSignOut = () => {
-        signOut(auth, googleProvider)
-            .then(result => {
-                console.log(result);
-            })
-            .catch(error => {
-                console.log("Error", error.message);
-            })
+        Swal.fire({
+            title: "Are you sure?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Log Out"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                signOut(auth, googleProvider)
+                    .then(result => {
+                        console.log(result);
+                    })
+
+                    .catch(error => {
+                        console.log("Error", error.message);
+                    })
+                Swal.fire({
+                    title: "Logged Out!",
+                    text: "Your Loging Out Now.",
+                    icon: "success"
+                });
+            }
+        });
+
     }
 
     const navLinks = <>

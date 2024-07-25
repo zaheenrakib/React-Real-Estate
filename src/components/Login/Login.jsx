@@ -26,6 +26,7 @@ const Login = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                
                 navigate('/');
             })
             .catch(error => {
