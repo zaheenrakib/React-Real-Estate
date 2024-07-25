@@ -2,54 +2,95 @@ import React, { useState } from 'react';
 import Navbar from '../shared/Navbar/Navbar';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup, signOut } from "firebase/auth";
 import app from '../../firebase/firebase.config';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
     const [user, setUser] = useState(null);
     const auth = getAuth(app);
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
+    const navigate = useNavigate();
 
+
+    auth.onAuthStateChanged((user)=> {
+        if(user){
+            setUser(user);
+        }
+    })
+    // console.log(user);
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, googleProvider)
-        .then(result =>{
-            const loggedInUser = result.user;
-            console.log(loggedInUser);
-            setUser(loggedInUser);
-        })
-        .catch(error =>{
-            console.log( "Error", error.message);
-        })
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                setUser(loggedInUser);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "SuccessFully Login",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                // navigate('/');
+            })
+            .catch(error => {
+                console.log("Error", error.message);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!"
+                });
+            })
     }
 
-    const handleGitHubSignIn = () =>{
+    const handleGitHubSignIn = () => {
         signInWithPopup(auth, githubProvider)
-       .then(result =>{
-        const loggedInUser = result.user;
-        console.log(loggedInUser);
-        setUser(loggedInUser);
-        })
-       .catch(error =>{
-            console.log( "Error", error.message);
-        })
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                setUser(loggedInUser);
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "SuccessFully Login",
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                // navigate('/');
+            })
+            .catch(error => {
+                console.log("Error", error.message);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!"
+                });
+            })
     }
 
 
-    const handleGoogleSignOut = () =>{
+    const handleGoogleSignOut = () => {
         signOut(auth, googleProvider)
-        .then(result =>{
-            console.log(result);
-            setUser(null);
-        })
-        .catch(error =>{
-            console.log( "Error", error.message);
-        })
+            .then(result => {
+                console.log(result);
+                setUser(null);
+            })
+            .catch(error => {
+                console.log("Error", error.message);
+            })
     }
-
-    console.log(app);
     return (
         <>
-            <Navbar></Navbar>
+            <Navbar
+            
+            user={user}
+            
+            ></Navbar>
+
+
+
             <div className="hero min-h-screen bg-base-200">
                 <form className="card-body">
                     <div className="form-control">
@@ -72,7 +113,7 @@ const Login = () => {
                     </div>
 
                     {
-                        user? (
+                        user ? (
                             <button onClick={handleGoogleSignOut} className='btn btn-accent'>Logout</button>
                         ) : (
                             <div>
@@ -83,12 +124,13 @@ const Login = () => {
                     }
                 </form>
             </div>
-            
+
             {
+            
                 user && <div className='text-center'>
                     <h3>User : {user.displayName}</h3>
                     <p>Email : {user.email} </p>
-                    <img src={user.photoURL} alt="" />
+                    <img className='rounded-2xl' src={user.photoURL} alt="" />
                 </div>
             }
 

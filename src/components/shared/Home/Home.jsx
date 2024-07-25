@@ -13,8 +13,6 @@ const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-
-
             <div>
                 <div className="carousel w-full">
                     <div id="slide1" className="carousel-item relative w-full">

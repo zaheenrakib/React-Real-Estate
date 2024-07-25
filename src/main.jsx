@@ -19,23 +19,23 @@ const router = createBrowserRouter([
     loader: () => fetch('/residential.json')
   },
   {
-    path: '/about',
+    path: 'about',
     element: <About></About>
   },
   {
-    path: '/blog',
+    path: 'blog',
     element: <Blog></Blog>
   },
   {
-    path: "/login",
+    path: "login",
     element: <Login></Login>,
   },
   {
-    path: "/register",
+    path: "register",
     element: <Register></Register>,
   },
   {
-    path: '/update',
+    path: 'update',
     element: <Update></Update>
   }
 ]);

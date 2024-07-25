@@ -23,13 +23,11 @@ const Register = () => {
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" placeholder="password" className="input input-bordered" required />
-                        
+                        <input type="password" placeholder="password" className="input input-bordered" required />                       
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Register</button>
                     </div>
-
                 </form>
             </div>
         </div>
