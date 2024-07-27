@@ -4,12 +4,12 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { HashLoader } from 'react-spinners';
 
 const PrivateRoute = ({children}) => {
-    const {currentUser , loading} = useContext(UserContext);
+    const {user, loading} = useContext(UserContext);
     const location = useLocation();
     if(loading){
         return <HashLoader className='container mx-auto'></HashLoader>
     }
-    if(currentUser) {
+    if(user) {
         return children;
     }
     return <Navigate to='/login' state={{from: location}} replace ></Navigate>

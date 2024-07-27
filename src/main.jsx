@@ -16,6 +16,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import CardDetails from './components/CardDetails/CardDetails';
 import PrivateRoute from './components/Routes/PrivateRoute';
 import Error from './components/Error/Error';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 const router = createBrowserRouter([
   {
@@ -54,9 +55,11 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <HelmetProvider>
-    <AuthProvider>
-      <RouterProvider router={router} />
-    </AuthProvider>
+      <ParallaxProvider>
+        <AuthProvider>
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </ParallaxProvider>
     </HelmetProvider>
   </React.StrictMode>,
 )
