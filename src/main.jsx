@@ -12,12 +12,17 @@ import Update from './components/Update/Update';
 import About from './components/About/About';
 import Blog from './components/Blog/Blog';
 import { AuthProvider } from './components/Hooks/AuthProvider';
+import { HelmetProvider } from 'react-helmet-async';
+import CardDetails from './components/CardDetails/CardDetails';
+import PrivateRoute from './components/Routes/PrivateRoute';
+import Error from './components/Error/Error';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home></Home>,
-    loader: () => fetch('/residential.json')
+    errorElement: <Error></Error>,
+    loader: async () => await fetch('/residential.json')
   },
   {
     path: 'about',
@@ -38,13 +43,20 @@ const router = createBrowserRouter([
   {
     path: 'update',
     element: <Update></Update>
+  },
+  {
+    path: '/carddetails/:cardId',
+    element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
+    loader: async () => await fetch('/residential.json')
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <HelmetProvider>
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
+    </HelmetProvider>
   </React.StrictMode>,
 )

@@ -1,127 +1,143 @@
 [
+  {
+      "id": 1,
+      "estate_title": "Luxury Villa with Sea View",
+      "segment_name": "Residential",
+      "description": "Beautiful villa with stunning sea views, perfect for a family retreat.",
+      "price": "$1,500,000",
+      "status": "sale",
+      "area": "4000 sq ft",
+      "location": "Coastal Town, California",
+      "facilities": ["Living Room", "Baths", "Kitchen"],
+      "image": "https://i.ibb.co/kJsjyrM/img-1.jpg",
+      "other_information": {
+        "bedrooms": 4,
+        "bathrooms": 5,
+        "garage": 2
+      },
+      "owner_name": "John Doe",
+      "owner_profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7WqDsLTZoR_xfeFFOHKBlLL0_2a9KP87jpw&s"
+    },
     {
-        "id": 1,
-        "estate_title": "Luxury Villa with Sea View",
-        "segment_name": "Residential",
-        "description": "Beautiful villa with stunning sea views, perfect for a family retreat.",
-        "price": "$1,500,000",
-        "status": "sale",
-        "area": "4000 sq ft",
-        "location": "Coastal Town, California",
-        "facilities": ["Swimming Pool", "Garden", "Home Theater"],
-        "image": "https://i.ibb.co/kJsjyrM/img-1.jpg",
-        "other_information": {
-          "bedrooms": 4,
-          "bathrooms": 5,
-          "garage": 2
-        }
+      "id": 2,
+      "estate_title": "Modern Apartment in Downtown",
+      "segment_name": "Residential",
+      "description": "Stylish apartment in the heart of the city, close to all amenities.",
+      "price": "$2,500/month",
+      "status": "rent",
+      "area": "1200 sq ft",
+      "location": "Downtown, New York",
+      "facilities": ["Living Room", "Baths", "Kitchen"],
+      "image": "https://i.ibb.co/jygBgQK/img-2.jpg",
+      "owner_name": "Jane Smith",
+      "owner_profile_pic": "https://images.pexels.com/photos/634021/pexels-photo-634021.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": 3,
+      "estate_title": "Cozy Townhouse with Garden",
+      "segment_name": "Residential",
+      "description": "Charming townhouse with a private garden, ideal for nature lovers.",
+      "price": "$800,000",
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "Suburban Neighborhood, London",
+      "facilities": ["Living Room", "Baths", "Kitchen"],
+      "image": "https://i.ibb.co/7gybT2C/img-4.jpg",
+      "other_information": {
+        "bedrooms": 3,
+        "bathrooms": 2.5,
+        "garden_size": "500 sq ft"
       },
-      {
-        "id": 2,
-        "estate_title": "Modern Apartment in Downtown",
-        "segment_name": "Residential",
-        "description": "Stylish apartment in the heart of the city, close to all amenities.",
-        "price": "$2,500/month",
-        "status": "rent",
-        "area": "1200 sq ft",
-        "location": "Downtown, New York",
-        "facilities": ["Gym", "Concierge Service", "Balcony"],
-        "image": "https://i.ibb.co/jygBgQK/img-2.jpg"
+      "owner_name": "Michael Johnson",
+      "owner_profile_pic": "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    },
+    {
+      "id": 4,
+      "estate_title": "Spacious Family Home",
+      "segment_name": "Residential",
+      "description": "Large family home with plenty of space for entertainment and relaxation.",
+      "price": "$3,000/month",
+      "status": "rent",
+      "area": "3000 sq ft",
+      "location": "Suburb, Sydney",
+      "facilities": ["Living Room", "Baths", "Kitchen"],
+      "image": "https://i.ibb.co/r72MtjB/properties-1.jpg",
+      "other_information": {
+        "bedrooms": 5,
+        "bathrooms": 3,
+        "parking": "Driveway"
       },
-      {
-        "id": 3,
-        "estate_title": "Cozy Townhouse with Garden",
-        "segment_name": "Residential",
-        "description": "Charming townhouse with a private garden, ideal for nature lovers.",
-        "price": "$800,000",
-        "status": "sale",
-        "area": "2500 sq ft",
-        "location": "Suburban Neighborhood, London",
-        "facilities": ["Fireplace", "Garage", "Terrace"],
-        "image": "https://i.ibb.co/7gybT2C/img-4.jpg",
-        "other_information": {
-          "bedrooms": 3,
-          "bathrooms": 2.5,
-          "garden_size": "500 sq ft"
-        }
-      },
-      {
-        "id": 4,
-        "estate_title": "Spacious Family Home",
-        "segment_name": "Residential",
-        "description": "Large family home with plenty of space for entertainment and relaxation.",
-        "price": "$3,000/month",
-        "status": "rent",
-        "area": "3000 sq ft",
-        "location": "Suburb, Sydney",
-        "facilities": ["Swimming Pool", "Media Room", "Outdoor BBQ Area"],
-        "image": "https://i.ibb.co/r72MtjB/properties-1.jpg",
-        "other_information": {
-          "bedrooms": 5,
-          "bathrooms": 3,
-          "parking": "Driveway"
-        }
-      },
-      {
-        "id": 5,
-        "estate_title": "Riverside Cottage",
-        "segment_name": "Residential",
-        "description": "Quaint cottage by the river, perfect for a peaceful getaway.",
-        "price": "$600,000",
-        "status": "sale",
-        "area": "1800 sq ft",
-        "location": "Riverside Village, France",
-        "facilities": ["Deck", "Fire Pit", "Boat Dock"],
-        "image": "https://i.ibb.co/n3zMrYK/properties-2.jpg"
-      },
-      {
-        "id": 6,
-        "estate_title": "Cosy Cabin in the Woods",
-        "segment_name": "Residential",
-        "description": "Charming cabin nestled in the forest, ideal for nature enthusiasts.",
-        "price": "$200/night",
-        "status": "rent",
-        "area": "800 sq ft",
-        "location": "Woodland Retreat, Canada",
-        "facilities": ["Wood-burning Stove", "Hiking Trails", "Deck"],
-        "image": "https://i.ibb.co/5BPXfCH/properties-3.jpg"
-      },
-      {
-        "id": 7,
-        "estate_title": "Seaside Bungalow",
-        "segment_name": "Residential",
-        "description": "Relaxing bungalow by the beach, perfect for a summer getaway.",
-        "price": "$900,000",
-        "status": "sale",
-        "area": "2200 sq ft",
-        "location": "Beachfront Paradise, Hawaii",
-        "facilities": ["Ocean View", "Sun Deck", "Outdoor Shower"],
-        "image": "https://i.ibb.co/yPyQkmP/properties-4.jpg"
-      },
-      {
-        "id": 8,
-        "estate_title": "Mountain Retreat",
-        "segment_name": "Residential",
-        "description": "Serene retreat in the mountains, surrounded by breathtaking views.",
-        "price": "$1,200,000",
-        "status": "sale",
-        "area": "3500 sq ft",
-        "location": "Alpine Haven, Switzerland",
-        "facilities": ["Ski Room", "Sauna", "Mountain View Terrace"],
-        "image": "https://i.ibb.co/Zm7x98Y/properties-5.jpg"
-      },
-      {
-        "id": 9,
-        "estate_title": "Urban Loft",
-        "segment_name": "Residential",
-        "description": "Sleek loft apartment in the heart of the city, offering modern living.",
-        "price": "$700,000",
-        "status": "sale",
-        "area": "2000 sq ft",
-        "location": "Metropolitan City, Japan",
-        "facilities": ["Open Floor Plan", "City View", "Roof Deck"],
-        "image": "https://i.ibb.co/fGscnwM/properties-6.jpg"
-    }
+      "owner_name": "Emily Davis",
+      "owner_profile_pic": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": 5,
+      "estate_title": "Riverside Cottage",
+      "segment_name": "Residential",
+      "description": "Quaint cottage by the river, perfect for a peaceful getaway.",
+      "price": "$600,000",
+      "status": "sale",
+      "area": "1800 sq ft",
+      "location": "Riverside Village, France",
+      "facilities": ["Living Room", "Baths", "Kitchen"],
+      "image": "https://i.ibb.co/n3zMrYK/properties-2.jpg",
+      "owner_name": "Daniel Brown",
+      "owner_profile_pic": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7WqDsLTZoR_xfeFFOHKBlLL0_2a9KP87jpw&s"
+    },
+    {
+      "id": 6,
+      "estate_title": "Cosy Cabin in the Woods",
+      "segment_name": "Residential",
+      "description": "Charming cabin nestled in the forest, ideal for nature enthusiasts.",
+      "price": "$200/night",
+      "status": "rent",
+      "area": "800 sq ft",
+      "location": "Woodland Retreat, Canada",
+      "facilities": ["Living Room", "Baths", "Kitchen"],
+      "image": "https://i.ibb.co/5BPXfCH/properties-3.jpg",
+      "owner_name": "Sophia Wilson",
+      "owner_profile_pic": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": 7,
+      "estate_title": "Seaside Bungalow",
+      "segment_name": "Residential",
+      "description": "Relaxing bungalow by the beach, perfect for a summer getaway.",
+      "price": "$900,000",
+      "status": "sale",
+      "area": "2200 sq ft",
+      "location": "Beachfront Paradise, Hawaii",
+      "facilities": ["Living Room", "Baths", "Kitchen"],
+      "image": "https://i.ibb.co/yPyQkmP/properties-4.jpg",
+      "owner_name": "James Miller",
+      "owner_profile_pic": "https://images.pexels.com/photos/634021/pexels-photo-634021.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": 8,
+      "estate_title": "Mountain Retreat",
+      "segment_name": "Residential",
+      "description": "Serene retreat in the mountains, surrounded by breathtaking views.",
+      "price": "$1,200,000",
+      "status": "sale",
+      "area": "3500 sq ft",
+      "location": "Alpine Haven, Switzerland",
+      "facilities": ["Living Room", "Baths", "Kitchen"],
+      "image": "https://i.ibb.co/Zm7x98Y/properties-5.jpg",
+      "owner_name": "Olivia Martinez",
+      "owner_profile_pic": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": 9,
+      "estate_title": "Urban Loft",
+      "segment_name": "Residential",
+      "description": "Sleek loft apartment in the heart of the city, offering modern living.",
+      "price": "$700,000",
+      "status": "sale",
+      "area": "2000 sq ft",
+      "location": "Metropolitan City, Japan",
+      "facilities": ["Living Room", "Baths", "Kitchen"],
+      "image": "https://i.ibb.co/fGscnwM/properties-6.jpg",
+      "owner_name": "Liam Lee",
+      "owner_profile_pic": "https://images.pexels.com/photos/1559486/pexels-photo-1559486.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  }
 ]
-
-  

@@ -1,22 +1,17 @@
-
 import React, { useContext, } from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../Hooks/AuthProvider';
 import { getAuth, GoogleAuthProvider, signOut } from 'firebase/auth';
-import app from '../../../firebase/firebase.config';
 import Swal from 'sweetalert2';
 import { HashLoader } from 'react-spinners';
+import { Helmet } from 'react-helmet-async';
 
 const Navbar = () => {
-    const { currentUser, loading } = useContext(UserContext);
-    if(loading){
+    const { user, loading, logOut } = useContext(UserContext);
+    if (loading) {
         return <HashLoader className='container mx-auto'></HashLoader>
     }
-    console.log(currentUser)
-    console.log(loading)
 
-    const auth = getAuth(app);
-    const googleProvider = new GoogleAuthProvider();
 
     const handleGoogleSignOut = () => {
         Swal.fire({
@@ -28,11 +23,10 @@ const Navbar = () => {
             confirmButtonText: "Log Out"
         }).then((result) => {
             if (result.isConfirmed) {
-                signOut(auth, googleProvider)
+                logOut()
                     .then(result => {
-                        console.log(result);
+                        console.log("log out", result);
                     })
-
                     .catch(error => {
                         console.log("Error", error.message);
                     })
@@ -46,14 +40,21 @@ const Navbar = () => {
 
     }
 
+
     const navLinks = <>
-        <Link to='/'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Home</li></Link>
+        <Helmet>
+            <title></title>
+        </Helmet>
+
+        <Link to='/'><li className='btn btn-success btn-outline active:btn-ghost px-6 rounded-tl-3xl rounded-br-3xl'>Home</li></Link>
         <Link to='/about'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>About</li></Link>
         <Link to='/blog'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Blog</li></Link>
-        <Link to='/update'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Update Profile</li></Link>
         {
-            currentUser ? (
-                <Link onClick={handleGoogleSignOut} to='/'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>LogOut</li></Link>
+            user ? (
+                <div className='flex gap-5'>
+                    <Link to='/update'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Update Profile</li></Link>
+                    <Link onClick={handleGoogleSignOut} to='/'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>LogOut</li></Link>
+                </div>
             ) : (
                 <Link to='/login'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Login</li></Link>
             )
@@ -64,7 +65,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-opacity-65 bg-base-100  z-10 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -83,11 +84,11 @@ const Navbar = () => {
             </div>
             <div className='navbar-end'>
                 {
-                    currentUser ? (
+                    user ? (
 
                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img title={currentUser?.displayName} src={currentUser?.photoURL} />
+                                <img title={user?.displayName} src={user?.photoURL} />
                             </div>
                         </div>
                     ) : (
