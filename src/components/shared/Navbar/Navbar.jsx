@@ -4,6 +4,7 @@ import { UserContext } from '../../Hooks/AuthProvider';
 import { getAuth, GoogleAuthProvider, signOut } from 'firebase/auth';
 import Swal from 'sweetalert2';
 import { HashLoader } from 'react-spinners';
+import logo from '/user.png'
 
 
 const Navbar = () => {
@@ -11,7 +12,6 @@ const Navbar = () => {
     if (loading) {
         return <HashLoader className='container mx-auto'></HashLoader>
     }
-
 
     const handleGoogleSignOut = () => {
         Swal.fire({
@@ -42,7 +42,7 @@ const Navbar = () => {
 
 
     const navLinks = <>
-        
+
 
         <li className=' px-5'><NavLink to='/'>Home</NavLink></li>
         <li className=' px-5'><NavLink to='/about'>About</NavLink></li>
@@ -55,7 +55,7 @@ const Navbar = () => {
                     <li className=' px-5'><NavLink onClick={handleGoogleSignOut} to='/'>LogOut</NavLink></li>
                 </div>
             ) : (
-               <li className=' px-5'><NavLink to='/login'>Login</NavLink></li>
+                <li className=' px-5'><NavLink to='/login'>Login</NavLink></li>
             )
 
         }
@@ -74,7 +74,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <a className="btn btn-ghost font-extrabold text-2xl">Real Estate</a>
+                <a className="btn btn-ghost font-extrabold text-2xl">NovaNest</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="custom gap-5 menu-horizontal px-1">
@@ -84,10 +84,12 @@ const Navbar = () => {
             <div className='navbar-end'>
                 {
                     user ? (
-
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img title={user?.displayName} src={user?.photoURL} />
+                        <div className='flex justify-center items-center gap-2'>
+                            <h1>{user.email}</h1>
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img title={user?.displayName} src={user.photoURL ? user.photoURL : logo} />
+                                </div>
                             </div>
                         </div>
                     ) : (

@@ -34,7 +34,7 @@ const About = () => {
         <>
             <Navbar></Navbar>
             <Helmet>
-                <title>Real Estate | About </title>
+                <title>NovaNest | About </title>
             </Helmet>
             <div className='bg-[#a4b5ba]'>
                 <Parallax speed={-5}>

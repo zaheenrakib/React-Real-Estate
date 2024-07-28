@@ -15,7 +15,7 @@ const CardDetails = () => {
     return (
         <>
         <Helmet>
-            <title>Real Estate | Details</title>
+            <title>NovaNest| Details</title>
         </Helmet>
 
             <Navbar></Navbar>

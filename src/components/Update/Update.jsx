@@ -11,7 +11,7 @@ const Update = () => {
     return (
         <>
         <Helmet>
-            <title></title>
+            <title>NovaNest| Update</title>
         </Helmet>
             <div>
                 <Navbar></Navbar>

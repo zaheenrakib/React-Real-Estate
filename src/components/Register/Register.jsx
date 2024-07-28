@@ -64,7 +64,7 @@ const Register = () => {
     return (
         <>
             <Helmet>
-                <title>Real Estate | Sign Up</title>
+                <title>NovaNest | Sign Up</title>
             </Helmet>
             <div>
                 <Navbar></Navbar>

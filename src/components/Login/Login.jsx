@@ -123,7 +123,7 @@ const Login = () => {
     return (
         <>
             <Helmet>
-                <title>Real Estate | Login</title>
+                <title>NovaNest | Login</title>
             </Helmet>
             <Navbar></Navbar>
 

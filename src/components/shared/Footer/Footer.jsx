@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <div>
-            <footer className="footer bg-[#58B19F] text-white p-10">
+            <footer className="footer bg-[#58B19F]  p-10">
                 <nav>
                     <h6 className="footer-title">Services</h6>
                     <a className="link link-hover">Branding</a>
@@ -35,7 +35,7 @@ const Footer = () => {
                                 type="text"
                                 placeholder="username@site.com"
                                 className="input input-bordered join-item" />
-                            <button className="btn btn-primary join-item">Subscribe</button>
+                            <button className="btn btn-success text-white join-item">Subscribe</button>
                         </div>
                     </fieldset>
                 </form>

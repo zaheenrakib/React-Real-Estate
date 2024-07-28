@@ -5,12 +5,16 @@ import Counter from '../shared/Counter/Counter';
 import { MdEmail, MdLocationPin } from 'react-icons/md';
 import { FaPhone, FaPhoneAlt } from 'react-icons/fa';
 import { Parallax } from 'react-scroll-parallax';
+import { Helmet } from 'react-helmet-async';
 
 
 const Contact = () => {
 
     return (
         <>
+        <Helmet>
+            <title>NovaNest | Contact </title>
+        </Helmet>
             <Navbar></Navbar>
 
             <Parallax>
