@@ -6,6 +6,8 @@ import app from '../../firebase/firebase.config';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { UserContext } from '../Hooks/AuthProvider';
+import { Helmet } from 'react-helmet-async';
+import { FaEye, FaEyeSlash, FaRegEye } from 'react-icons/fa';
 
 
 const Login = () => {
@@ -17,6 +19,16 @@ const Login = () => {
     const githubProvider = new GithubAuthProvider();
     const location = useLocation();
     const navigate = useNavigate();
+
+
+    const [showPassword, setShowPassword] = useState(false);
+
+    const togglePasswordVisibility = (e) => {
+        e.preventDefault();
+        setShowPassword(!showPassword);
+
+    }
+
 
     const from = location.state?.from?.pathname || '/';
 
@@ -107,8 +119,12 @@ const Login = () => {
     // console.log(user)
 
 
+
     return (
         <>
+            <Helmet>
+                <title>Real Estate | Login</title>
+            </Helmet>
             <Navbar></Navbar>
 
             <div className="hero min-h-screen bg-base-200">
@@ -119,11 +135,34 @@ const Login = () => {
                         </label>
                         <input type="email" {...register("email", { required: true })} name='email' placeholder="email" className="input input-bordered" required />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control relative">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
-                        <input type="password" {...register("password", { required: true })} name='password' placeholder="password" className="input input-bordered" required />
+                        <input
+                            id="password"
+                            type={showPassword ? 'text' : 'password'}
+                            {...register("password", { required: true })}
+                            name="password"
+                            placeholder="Password"
+                            className="input input-bordered"
+                            required />
+                        <button 
+                        style={{
+                            position: 'absolute',
+                            top: '35%',
+                            right: '5%',
+                            transform: 'translateY(50%)',
+                            background: 'none',
+                            border: 'none',
+                            cursor: 'pointer',
+                            fontSize:'20px'
+                        }} className='' onClick={togglePasswordVisibility}>
+                            {
+                                showPassword ? <FaEyeSlash /> : <FaEye /> 
+                            }
+                        </button>
+
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>

@@ -25,7 +25,7 @@ const Home = () => {
     return (
         <>
             <Helmet>
-                <title>Real State | Home</title>
+                <title>Real Estate | Home</title>
             </Helmet>
             <div>
                 <Navbar></Navbar>
@@ -82,7 +82,15 @@ const Home = () => {
                         }
                         {/* <ResiCard></ResiCard> */}
                     </div>
+                
                 </section>
+
+                <section>
+                    <div>
+                        
+                    </div>
+                </section>
+
 
                 <Footer></Footer>
             </div>
