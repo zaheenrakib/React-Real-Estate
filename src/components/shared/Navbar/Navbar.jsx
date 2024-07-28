@@ -1,10 +1,10 @@
 import React, { useContext, } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { UserContext } from '../../Hooks/AuthProvider';
 import { getAuth, GoogleAuthProvider, signOut } from 'firebase/auth';
 import Swal from 'sweetalert2';
 import { HashLoader } from 'react-spinners';
-import { Helmet } from 'react-helmet-async';
+
 
 const Navbar = () => {
     const { user, loading, logOut } = useContext(UserContext);
@@ -42,25 +42,23 @@ const Navbar = () => {
 
 
     const navLinks = <>
-        <Helmet>
-            <title></title>
-        </Helmet>
+        
 
-        <Link to='/'><li className='btn btn-success btn-outline active:btn-ghost px-6 rounded-tl-3xl rounded-br-3xl'>Home</li></Link>
-        <Link to='/about'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>About</li></Link>
-        <Link to='/blog'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Blog</li></Link>
+        <li className=' px-5'><NavLink to='/'>Home</NavLink></li>
+        <li className=' px-5'><NavLink to='/about'>About</NavLink></li>
+        <li className='  px-5'><NavLink to='/blog'>blog</NavLink></li>
         {
             user ? (
                 <div className='flex gap-5'>
-                    <Link to='/update'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Update Profile</li></Link>
-                    <Link onClick={handleGoogleSignOut} to='/'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>LogOut</li></Link>
+                    <li className=' px-5'><NavLink to='/update'>Update Profile</NavLink></li>
+                    <li className=' px-5'><NavLink onClick={handleGoogleSignOut} to='/'>LogOut</NavLink></li>
                 </div>
             ) : (
-                <Link to='/login'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Login</li></Link>
+               <li className=' px-5'><NavLink to='/login'>Login</NavLink></li>
             )
 
         }
-        {/* <Link to='/register'><li className='btn btn-success btn-outline px-6 rounded-tl-3xl rounded-br-3xl'>Register</li></Link> */}
+        {/* <Link to='/register'><li className='btn btn-success btn-outline px-6'>Register</li></Link> */}
     </>
 
 
@@ -71,14 +69,14 @@ const Navbar = () => {
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="custom menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         {navLinks}
                     </ul>
                 </div>
                 <a className="btn btn-ghost font-extrabold text-2xl">Real Estate</a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu gap-5 menu-horizontal px-1">
+                <ul className="custom gap-5 menu-horizontal px-1">
                     {navLinks}
                 </ul>
             </div>

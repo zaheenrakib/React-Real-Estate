@@ -4,6 +4,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { Parallax } from 'react-scroll-parallax';
 import Footer from '../shared/Footer/Footer';
 import { MdLocationPin } from 'react-icons/md';
+import { Helmet } from 'react-helmet-async';
 
 const CardDetails = () => {
     const cardResi = useLoaderData();
@@ -13,6 +14,10 @@ const CardDetails = () => {
     console.log(cardItem)
     return (
         <>
+        <Helmet>
+            <title>Real | Card Details</title>
+        </Helmet>
+
             <Navbar></Navbar>
             <div className='bg-[#A4B5BA]'>
                 <Parallax style={{ background: 'blue' }} speed={-5}>
@@ -25,7 +30,7 @@ const CardDetails = () => {
                                     <p className="mb-5">
                                         {cardItem.description}
                                     </p>
-                                    <button to="hero" className="btn btn-success text-white">Explore</button>
+                                    <button className="btn btn-success text-white">Explore</button>
                                 </div>
                             </div>
                         </div>
@@ -215,8 +220,6 @@ const CardDetails = () => {
                                     </span></h1>
                                 <h1 className='card-title space-y-2'>Desc: {cardItem.description}</h1>
                                </div>
-
-                                
                             </form>
                         </div>
                     </div>

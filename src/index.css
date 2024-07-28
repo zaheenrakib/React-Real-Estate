@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalnia+Glaze&display=swap');
 
 
-.our{
+.our {
     font-family: "Kalnia Glaze", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -12,7 +12,8 @@
     font-variation-settings:
         "wdth"100;
 }
-.card-title{
+
+.card-title {
     font-family: "Kalnia Glaze", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -20,7 +21,8 @@
     font-variation-settings:
         "wdth"100;
 }
-.text-5xl{
+
+.text-5xl {
     font-family: "Kalnia Glaze", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -28,3 +30,67 @@
     font-variation-settings:
         "wdth"100;
 }
+
+@media (hover:hover) {
+
+    .custom li>*:not(ul, .custom-title, details, .btn):active,
+    .custom li>*:not(ul, .custom-title, details, .btn).active,
+    .custom li>details>summary:active {
+        background-color: rgb(0, 255, 13);
+        color: white;
+        padding: 10px;
+        font-size: 20px;
+        border-radius: 18px 5px 15px 5px;
+        font:900;
+        border: 2px solid seagreen;
+        font-family: "Kalnia Glaze", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-variation-settings:
+            "wdth"100;
+
+    }
+}
+/* 
+@media (hover:hover) {
+
+    .custom li>*:not(ul, .custom-title, details, .btn):active,
+    .custom li>*:not(ul, .custom-title, details, .btn).active,
+    .custom li>details>summary:active {
+        --tw-bg-opacity: 1;
+        background-color: red;
+        --tw-text-opacity: 1;
+        color: green;
+    }
+} */
+
+/* @media (hover:hover) {
+
+    .custom li>*:not(ul, .custom-title, details, .btn):active,
+    .custom li>*:not(ul, .custom-title, details, .btn).active,
+    .custom li>details>summary:active {
+        --tw-bg-opacity: 1;
+        background-color: red;
+        --tw-text-opacity: 1;
+        color: green;
+    }
+} */
+
+/* @media (hover: hover) {
+
+    :where(.custom li:not(.custom-title, .disabled) > *:not(ul, details, .custom-title)):not(.active, .btn):hover,
+    :where(.custom li:not(.custom-title, .disabled) > details > summary:not(.custom-title)):not(.active, .btn):hover {
+        cursor: pointer;
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+    }
+
+    @supports (color: oklch(0% 0 0)) {
+
+        :where(.custom li:not(.custom-title, .disabled) > *:not(ul, details, .custom-title)):not(.active, .btn):hover,
+        :where(.custom li:not(.custom-title, .disabled) > details > summary:not(.custom-title)):not(.active, .btn):hover {
+            background-color: var(--fallback-bc, oklch(var(--bc)/0.1));
+        }
+    }
+} */
