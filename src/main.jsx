@@ -17,6 +17,7 @@ import CardDetails from './components/CardDetails/CardDetails';
 import PrivateRoute from './components/Routes/PrivateRoute';
 import Error from './components/Error/Error';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import Contact from './components/Contact/Contact';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
     path: '/carddetails/:cardId',
     element: <PrivateRoute><CardDetails></CardDetails></PrivateRoute>,
     loader: async () => await fetch('/residential.json')
+  },
+  {
+    path: 'contact',
+    element: <PrivateRoute><Contact></Contact></PrivateRoute>
   }
 ]);
 

@@ -159,7 +159,7 @@ const Login = () => {
                             fontSize:'20px'
                         }} className='' onClick={togglePasswordVisibility}>
                             {
-                                showPassword ? <FaEyeSlash /> : <FaEye /> 
+                                showPassword ? <FaEye /> :  <FaEyeSlash /> 
                             }
                         </button>
 

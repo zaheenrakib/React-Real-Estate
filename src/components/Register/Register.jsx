@@ -119,7 +119,7 @@ const Register = () => {
                                     fontSize: '20px'
                                 }} className=' absolute top-' onClick={togglePasswordVisibility}>
                                 {
-                                    showPassword ? <FaEyeSlash /> : <FaEye />
+                                    showPassword ? <FaEye /> :  <FaEyeSlash />
                                 }
                             </button>
                             {errors.password?.type === "required" &&

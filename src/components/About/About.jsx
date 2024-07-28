@@ -7,6 +7,7 @@ import 'swiper/css';
 import { Parallax, ParallaxBanner, ParallaxBannerLayer, useParallax } from 'react-scroll-parallax';
 import Footer from '../shared/Footer/Footer';
 import { FaQuoteRight } from 'react-icons/fa';
+import Counter from '../shared/Counter/Counter';
 
 AOS.init();
 
@@ -134,7 +135,7 @@ const About = () => {
             </Parallax>
 
             <Parallax>
-                <div className='bg-[#475a6b]' >
+                <div className='bg-[#475a6b] p-6' >
                     <div>
                         <h1 className='text-5xl text-white font-extrabold'>What Our Customers Says</h1>
                         <p className='text-2xl text-[#a7c8e4]  w-2/4 '>
@@ -144,7 +145,7 @@ const About = () => {
                     <ParallaxBanner style={{ aspectRatio: '2 / 1' }}>
                         <ParallaxBannerLayer image="https://wordpress.themeholy.com/realar/wp-content/uploads/2024/05/property_inner_4.png" speed={-20} />
                         <ParallaxBannerLayer>
-                            <div className='mt-24'>
+                            <div className='mt-24 p-5'>
                                 <Swiper spaceBetween={50}
                                     slidesPerView={3}
                                     onSlideChange={() => console.log('slide change')}
@@ -353,8 +354,8 @@ const About = () => {
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}>
                         <SwiperSlide>
-                            <div>    
-                                <img className='w-96 h-80 rounded-2xl shadow-xl' src="https://images.pexels.com/photos/3775156/pexels-photo-3775156.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" /> 
+                            <div>
+                                <img className='w-96 h-80 rounded-2xl shadow-xl' src="https://images.pexels.com/photos/3775156/pexels-photo-3775156.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
                                 <h1 className='text-center text-xl text-white'>Sarika</h1>
                             </div>
                         </SwiperSlide>
@@ -406,7 +407,7 @@ const About = () => {
 
 
 
-
+            <Counter></Counter>
             <Footer></Footer>
 
         </>

@@ -46,6 +46,7 @@ const Navbar = () => {
 
         <li className=' px-5'><NavLink to='/'>Home</NavLink></li>
         <li className=' px-5'><NavLink to='/about'>About</NavLink></li>
+        <li className=' px-5'><NavLink to='/contact'>Contact</NavLink></li>
         <li className='  px-5'><NavLink to='/blog'>blog</NavLink></li>
         {
             user ? (
