@@ -66,10 +66,10 @@ const Register = () => {
             <Helmet>
                 <title>NovaNest | Sign Up</title>
             </Helmet>
+            <Navbar></Navbar>
             <div>
-                <Navbar></Navbar>
-                <div className="hero min-h-screen bg-base-200">
-                    <form onSubmit={handleSubmit(onSubmit)} className="card-body w-[670px] h-[635px]">
+                <div className="hero">
+                    <form onSubmit={handleSubmit(onSubmit)} className="card-body w-[670px] mt-16">
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>

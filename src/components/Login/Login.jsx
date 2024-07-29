@@ -49,8 +49,8 @@ const Login = () => {
                 console.log("Error", error.message);
                 Swal.fire({
                     icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong!"
+                    title: "Oops",
+                    text: "Email And Password Don't match"
                 });
             })
     }

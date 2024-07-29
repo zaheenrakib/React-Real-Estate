@@ -36,13 +36,14 @@
     .custom li>*:not(ul, .custom-title, details, .btn):active,
     .custom li>*:not(ul, .custom-title, details, .btn).active,
     .custom li>details>summary:active {
-        background-color: rgb(23, 184, 149);
+        background-color: rgb(36, 165, 94);
         color: white;
         padding: 10px;
         font-size: 20px;
         border-radius: 18px 5px 15px 5px;
+        border: none;
         font:900;
-        border: 2px solid seagreen;
+        /* border: 2px solid rgb(54, 116, 81); */
         font-family: "Kalnia Glaze", serif;
         font-optical-sizing: auto;
         font-weight: 400;

@@ -50,7 +50,7 @@ const Blog = () => {
                             <h2 className="card-title">University class starting soon while the lovely valley team work</h2>
                             <p>Relar Residence promotes sustainable transportation options, with dedicated spaces. Welcome to Realar Residence, where sustainability meets comfort in every corner. In this blog post, we’ll explore the green innovations seamlessly integrated into the fabric of EcoLand, creating a unique</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-success">See More</button>
+                                <button className="btn btn-success text-white">See More</button>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@ const Blog = () => {
                             <h2 className="card-title">University class starting soon while the lovely valley team work</h2>
                             <p>Relar Residence promotes sustainable transportation options, with dedicated spaces. Welcome to Realar Residence, where sustainability meets comfort in every corner. In this blog post, we’ll explore the green innovations seamlessly integrated into the fabric of EcoLand, creating a unique</p>
                             <div className="card-actions justify-end">
-                                <button className="btn btn-success">See More</button>
+                                <button className="btn btn-success text-white">See More</button>
                             </div>
                         </div>
                     </div>
